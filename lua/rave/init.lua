@@ -34,15 +34,11 @@ end
 
 -- Set functions
 M.set_bpm = function(bpm)
-    return {
-        bpm = bpm
-    }
+    M.bpm = bpm
 end
 
 M.set_distance = function(distance)
-    return {
-        distance = distance
-    }
+    M.distance = distance
 end
 
 M.set_colors = function(colors)
@@ -50,6 +46,7 @@ M.set_colors = function(colors)
     for color in colors:gmatch("[^,]+") do
         table.insert(colors_table, color)
     end
+    M.colors = colors_table
 end
 
 
@@ -84,14 +81,15 @@ M.recolor_lines = function()
     local lines = vim.api.nvim_buf_line_count(0)
     local colors = M.config.colors
 
-    vim.api.nvim_buf_clear_namespace(0, vim.api.nvim_create_namespace("RaveSpace"), 0, -1)
+    local ns_id = vim.api.nvim_create_namespace("RaveSpace")
+    vim.api.nvim_buf_clear_namespace(0, ns_id, 0, -1)
 
     for i = 0, lines - 1 do
         if math.abs(i - cursor_line) > M.config.distance then
             local color = colors[(i % #colors) + 1]
             local hl_group = "RaveColors" .. (i % #colors + 1)
             vim.api.nvim_set_hl(0, hl_group, { fg = color })
-            vim.api.nvim_buf_add_highlight(0, vim.api.nvim_create_namespace("RaveSpace"), hl_group, i, 0, -1)
+            vim.api.nvim_buf_add_highlight(0, ns_id, hl_group, i, 0, -1)
         end
     end
 end
