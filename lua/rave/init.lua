@@ -61,40 +61,11 @@ M.stop_rave = function()
 end
 
 M.start_rave = function()
-    if M.timer then
-        M.timer:stop()
-    end
-
-    M.color_index = 0
-
-    M.timer = vim.loop.new_timer()
-    local interval = 60000 / M.config.bpm
-
-    M.timer:start(0, interval, vim.schedule_wrap(function()
-        M.recolor_lines()
-    end))
+    -- TODO:
 end
 
-
 M.recolor_lines = function()
-    local cursor = vim.api.nvim_win_get_cursor(0)
-    local cursor_line = cursor[1] - 1
-    local lines = vim.api.nvim_buf_line_count(0)
-    local colors = M.config.colors
-
-    local ns_id = vim.api.nvim_create_namespace("RaveSpace")
-    vim.api.nvim_buf_clear_namespace(0, ns_id, 0, -1)
-
-    M.color_index = (M.color_index % #colors) + 1
-    local color = colors[M.color_index]
-
-    for i = 0, lines - 1 do
-        if math.abs(i - cursor_line) > M.config.distance then
-            local hl_group = "RaveColors" .. M.color_index
-            vim.api.nvim_set_hl(0, hl_group, { fg = color })
-            vim.api.nvim_buf_add_highlight(0, ns_id, hl_group, i, 0, -1)
-        end
-    end
+    -- TODO:
 end
 
 return M
