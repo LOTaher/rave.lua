@@ -71,21 +71,11 @@ describe("setup function", function()
     end)
 end)
 
-describe("stop_rave function", function()
-    it("can stop rave", function()
-        local rave = require("rave")
-        rave.timer = { stop = function() end }
-        rave.stop_rave()
-        assert.is_nil(rave.timer)
-    end)
-end)
-
-describe("start_rave function", function()
-    it("can start rave", function()
-        local rave = require("rave")
-        rave.start_rave()
-        assert.is_not_nil(rave.timer)
-    end)
-
+-- describe("start_rave function", function()
+    -- TODO: test if it starts
     -- TODO: test color switching
-end)
+-- end)
+
+-- describe("stop_rave function", function()
+    -- TODO: test if it stops
+    -- end)

@@ -50,14 +50,8 @@ M.set_colors = function(colors)
 end
 
 
--- Action functions
-M.timer = nil
-
 M.stop_rave = function()
-    if M.timer then
-        M.timer:stop()
-        M.timer = nil
-    end
+    -- TODO:
 end
 
 M.start_rave = function()
