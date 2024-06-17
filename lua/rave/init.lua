@@ -84,7 +84,7 @@ M.start_rave = function()
         end
 
         color_index = color_index + 1
-        timer_ref = util.setTimeout(interval, rave)
+        timer_ref = util.set_timeout(interval, rave)
     end
 
     rave()
