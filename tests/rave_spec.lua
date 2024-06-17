@@ -71,11 +71,4 @@ describe("setup function", function()
     end)
 end)
 
--- describe("start_rave function", function()
-    -- TODO: test if it starts
-    -- TODO: test color switching
--- end)
-
--- describe("stop_rave function", function()
-    -- TODO: test if it stops
-    -- end)
+-- TODO: add test for the rave_start() and rave_stop() functions
