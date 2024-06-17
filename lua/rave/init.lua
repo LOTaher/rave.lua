@@ -76,7 +76,7 @@ M.start_rave = function()
 
         for i = 1, line_count do
             local distance_from_cursor = math.abs(cursor_line - i)
-            if distance_from_cursor <= M.config.distance then
+            if distance_from_cursor > M.config.distance then
                 vim.api.nvim_buf_add_highlight(bufnr, -1, "RaveTempHighlight", i - 1, 0, -1)
             else
                 vim.api.nvim_buf_clear_namespace(bufnr, -1, i - 1, i)
