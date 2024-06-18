@@ -65,9 +65,9 @@ local timer_ref
 M.start_rave = function()
     local interval = 60000 / M.config.bpm
     local color_index = 1
+    local bufnr = vim.api.nvim_get_current_buf()
 
     local function rave()
-        local bufnr = vim.api.nvim_get_current_buf()
         local line_count = vim.api.nvim_buf_line_count(bufnr)
         local cursor_line = vim.api.nvim_win_get_cursor(0)[1]
         local current_color = M.config.colors[(color_index - 1) % #M.config.colors + 1]
@@ -84,6 +84,9 @@ M.start_rave = function()
         end
 
         color_index = color_index + 1
+        if color_index > #M.config.colors then
+            color_index = 1
+        end
         timer_ref = util.set_timeout(interval, rave)
     end
 
