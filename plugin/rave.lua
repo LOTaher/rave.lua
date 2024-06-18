@@ -18,8 +18,8 @@ vim.api.nvim_create_user_command("Rave", function(params)
     elseif subcommand == "distance" and tonumber(value) then
         require("rave").set_distance(tonumber(value))
     elseif subcommand == "colors" then
-        local colors = vim.split(value, ",")
-        require("rave").set_colors(colors)
+        value = string.gsub(value, " ", "")
+        require("rave").set_colors(value)
     elseif subcommand == "start" then
         require("rave").start_rave()
     elseif subcommand == "stop" then

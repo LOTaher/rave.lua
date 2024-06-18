@@ -50,10 +50,10 @@ end
 
 -- set the colors to cycle through
 -- @param colors string A comma-separated string of color codes
--- @example "#FFFFFF,#000000,#FF0000"
+-- @example #FFFFFF,#000000,#FF0000
 M.set_colors = function(colors)
     local colors_table = {}
-    for color in colors:gmatch("[^,]+") do
+    for color in string.gmatch(colors, '([^,]+)') do
         table.insert(colors_table, color)
     end
     M.config.colors = colors_table
