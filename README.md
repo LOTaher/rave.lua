@@ -4,7 +4,7 @@
 
 ## Documentation
 
-`See :help rave.nvim`
+See `:help rave.nvim`
 
 ## Installation
 
@@ -12,9 +12,7 @@
 ```lua
 -- plugins/rave.lua
 return {
-    'lotaher/rave.nvim',
--- or
-    dependencies = { 'lotaher/rave.nvim' }
+    'lotaher/rave.nvim'
 }
 ```
 
