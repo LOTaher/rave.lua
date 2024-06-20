@@ -12,9 +12,7 @@ See `:help rave.nvim`
 ```lua
 -- plugins/rave.lua
 return {
-    'lotaher/rave.nvim',
--- or
-    dependencies = { 'lotaher/rave.nvim' }
+    'lotaher/rave.nvim'
 }
 ```
 
