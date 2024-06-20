@@ -1,15 +1,16 @@
-================================================================================
-                                                                     *rave.nvim*
+==============================================================================
+                                                                 *rave.nvim*
 
 This plugin lets you rave in your text editor. You can adjust the bpm, the
-distance of the rave from your cursor and the colors the rave will use.
+distance of the rave from your cursor, and the colors the rave will use.
 
-
-                                                                  *rave.setup()*
+==============================================================================
+                                                              *rave.setup()*
 rave.setup({options})
 
-    Sets the default options for the rave. >
+    Sets the default options for the rave:
 
+        >
         rave.setup({
             bpm = 120,
             distance = 10,
@@ -19,60 +20,70 @@ rave.setup({options})
                 '#0000ff',
             },
         })
+        <
 
-    <
-                                                                *rave.set_bpm()*
+==============================================================================
+                                                            *rave.set_bpm()*
 rave.set_bpm({bpm})
 
     Sets the bpm of the rave. This is just the time interval
-    of each color switch. >
+    of each color switch:
 
+        >
         rave.set_bpm(120)
+        <
 
-    <
-                                                           *rave.set_distance()*
+==============================================================================
+                                                         *rave.set_distance()*
 rave.set_distance({distance})
 
     Sets the distance of the rave from the cursor. The
     {distance} value is the number of lines above and
-    below the cursor that will not be affected. >
+    below the cursor that will not be affected:
 
+        >
         rave.set_distance(10)
+        <
 
-    <
-                                                             *rave.set_colors()*
+==============================================================================
+                                                           *rave.set_colors()*
 rave.set_colors({colors})
 
     Sets the colors of the rave. The {colors} value is a
     table of strings that represent the colors that will
-    be used. >
+    be used:
 
+        >
         rave.set_colors({
             '#ff0000',
             '#00ff00',
             '#0000ff',
         })
+        <
 
-    <
-                                                                  *rave.start()*
+==============================================================================
+                                                                *rave.start()*
 rave.start()
 
     Starts the rave in the current buffer. If the rave
     settings change, you must call |rave.stop()| and then
-    |rave.start()| again to see the updates. >
+    |rave.start()| again to see the updates:
 
+        >
         rave.start()
+        <
 
-    <
-                                                                   *rave.stop()*
+==============================================================================
+                                                                 *rave.stop()*
 rave.stop()
 
     Stops the rave in the current buffer. If |rave.start()|
     was called in the buffer more than once, you will need
-    to call |rave.stop()| more than once. >
+    to call |rave.stop()| more than once:
 
+        >
         rave.stop()
+        <
 
-    <
-
- vim:tw=78:ts=8:ft=help:norl:
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
