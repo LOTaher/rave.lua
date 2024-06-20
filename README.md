@@ -4,7 +4,7 @@
 
 ## Documentation
 
-`See :help rave.nvim`
+See `:help rave.nvim`
 
 ## Installation
 
