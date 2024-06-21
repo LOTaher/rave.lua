@@ -2,10 +2,6 @@
 
 🪩 Rave in your favorite text editor
 
-**VOLUME UP!**
-
-https://github.com/LOTaher/rave.nvim/assets/86690869/64036f18-7d6f-4836-8f57-01c95e59b20f
-
 ## Documentation
 
 See `:help rave.nvim`
